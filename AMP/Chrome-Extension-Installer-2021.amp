@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="e68ac72f-98c8-4f7f-91c7-47f26dccd035" Name="Chrome Extension Installer 2021" Description="QXV0b21hdGlvbiBwb2xpY3kgdG8gZGVwbG95IGdvb2dsZSBjaHJvbWUgZXh0ZW5zaW9uLCB0aGlzIHZlcnNpb24gaXMgdXBkYXRlZCB0byB3b3JrIHdpdGggdGhlIGxhdGVzdCBnb29nbGUgY2hyb21lLg==" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{f50d04e9-bd83-4cfc-bd8e-ce8f225efdf2}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;ExtensionID&quot; Label=&quot;Extension ID&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.1.8" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>574,2869</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="574,2869" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RegistryKeyExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryKeyExists_Conditional]" DisplayName="Registry Key Exist (32 bit)" sap:VirtualizedContainerService.HintSize="538,124" Key="Software\Policies\Google\Chrome\Extensions" Key_DisplayArg="Software\Policies\Google\Chrome\Extensions" MinRequiredVersion="2.10.0.19" Moniker="42b79fbc-b34f-4a29-842f-7ed5eb98f01c" Result="[RegistryKeyExists_Result]" ResultString="[RegistryKeyExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryKeyExists" m_bTextLinkChange="False" />
+        <p:RegistryKeyExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryKeyExists_Conditional_1]" DisplayName="Registry Key Exist (64 bit)" sap:VirtualizedContainerService.HintSize="538,124" Key="Software\Wow6432Node\Google\Chrome\Extensions" Key_DisplayArg="Software\Wow6432Node\Google\Chrome\Extensions" MinRequiredVersion="2.10.0.19" Moniker="ca073a66-6fc3-4d99-a2c3-82acb461676c" Result="[RegistryKeyExists_Result_1]" ResultString="[RegistryKeyExists_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryKeyExists" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If" sap:VirtualizedContainerService.HintSize="538,771" MinRequiredVersion="2.16.0.1" Moniker="ab06c1a4-9f90-4b5b-b8f6-6809d4571443" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryKeyExists_Conditional]" Variable_DisplayArg="Registry Key Exist (32 bit).Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="492,498" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" MinRequiredVersion="2.10.0.19" Moniker="94d7db8b-04c1-4374-b042-842801ddfde2" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="TgBlAHcALQBJAHQAZQBtACAALQBQAGEAdABoACAAIgBIAEsATABNADoAXABTAG8AZgB0AHcAYQByAGUAXABQAG8AbABpAGMAaQBlAHMAXABHAG8AbwBnAGwAZQBcAEMAaAByAG8AbQBlAFwARQB4AHQAZQBuAHMAaQBvAG4AcwAiACAALQBGAG8AcgBjAGUA">
+                  <p:RunPowerShellScript.InArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p:RunPowerShellScript>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfObject.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfObject>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="false" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If" sap:VirtualizedContainerService.HintSize="538,945" MinRequiredVersion="2.16.0.1" Moniker="65eac3e7-5749-4ea3-8712-688afd96fe16" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryKeyExists_ResultString_1]" Variable_DisplayArg="Registry Key Exist (64 bit).Result String" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,672" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="d078ff9f-e126-42e8-b0d8-78f9e5ffe9f9" OutPut_64="[RunPowerShellScript_OutPut_64_2]" Result="[RunPowerShellScript_Result_2]" ResultString="[RunPowerShellScript_ResultString_2]" Results_x64="[RunPowerShellScript_Results_x64_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="TgBlAHcALQBJAHQAZQBtACAALQBQAGEAdABoACAAIgBIAEsATABNADoAXABTAG8AZgB0AHcAYQByAGUAXABXAG8AdwA2ADQAMwAyAE4AbwBkAGUAXABHAG8AbwBnAGwAZQBcAEMAaAByAG8AbQBlAFwARQB4AHQAZQBuAHMAaQBvAG4AcwAiACAALQBGAG8AcgBjAGUA">
+                  <p:RunPowerShellScript.InArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_2" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_2" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_2" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_2" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" DisplayName="Create registry extension key " sap:VirtualizedContainerService.HintSize="538,522" MinRequiredVersion="2.10.0.19" Moniker="73afd4fd-1397-41da-8450-13f76f01a110" OutPut_64="[RunPowerShellScript_OutPut_64_1]" Result="[RunPowerShellScript_Result_1]" ResultString="[RunPowerShellScript_ResultString_1]" Results_x64="[RunPowerShellScript_Results_x64_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="2afe9b84-5413-4b5b-90ab-53e5130c11b8" m_bTextLinkChange="False" script="JABLAGUAeQBOAGEAbQBlADMAMgAgAD0AIAAiAEgASwBMAE0AOgBcAFMAbwBmAHQAdwBhAHIAZQBcAFAAbwBsAGkAYwBpAGUAcwBcAEcAbwBvAGcAbABlAFwAQwBoAHIAbwBtAGUAXABFAHgAdABlAG4AcwBpAG8AbgBzAFwAJABFAHgAdABlAG4AcwBpAG8AbgBJAEQAIgANAAoAJABLAGUAeQBOAGEAbQBlADYANAAgAD0AIAAiAEgASwBMAE0AOgBcAFMAbwBmAHQAdwBhAHIAZQBcAFcAbwB3ADYANAAzADIATgBvAGQAZQBcAEcAbwBvAGcAbABlAFwAQwBoAHIAbwBtAGUAXABFAHgAdABlAG4AcwBpAG8AbgBzAFwAJABFAHgAdABlAG4AcwBpAG8AbgBJAEQAIgANAAoAJABQAHIAbwBwAGUAcgB0AHkATgBhAG0AZQAgAD0AIAAiAHUAcABkAGEAdABlAF8AdQByAGwAIgANAAoAJABQAHIAbwBwAGUAcgB0AHkAVgBhAGwAdQBlACAAPQAgACIAaAB0AHQAcABzADoALwAvAGMAbABpAGUAbgB0AHMAMgAuAGcAbwBvAGcAbABlAC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAC8AdQBwAGQAYQB0AGUAMgAvAGMAcgB4ACIADQAKAGkAZgAgACgAIQAoAHQAZQBzAHQALQBwAGEAdABoACAAJABLAGUAeQBOAGEAbQBlADMAMgApACkAIAB7ACAADQAKACAAIAAgACAATgBlAHcALQBJAHQAZQBtACAALQBQAGEAdABoACAAJABLAGUAeQBOAGEAbQBlADMAMgAgAC0ARgBvAHIAYwBlAA0ACgAgACAAIAAgAE4AZQB3AC0ASQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAIAAtAFAAYQB0AGgAIAAkAEsAZQB5AE4AYQBtAGUAMwAyACAALQBOAGEAbQBlACAAJABQAHIAbwBwAGUAcgB0AHkATgBhAG0AZQAgAC0AVgBhAGwAdQBlACAAJABQAHIAbwBwAGUAcgB0AHkAVgBhAGwAdQBlACAALQBQAHIAbwBwAGUAcgB0AHkAVAB5AHAAZQAgAFMAdAByAGkAbgBnACAALQBGAG8AcgBjAGUADQAKAH0AZQBsAHMAZQAgAHsADQAKACAAIAAgACAATgBlAHcALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQAgAC0AUABhAHQAaAAgACQASwBlAHkATgBhAG0AZQAzADIAIAAtAE4AYQBtAGUAIAAkAFAAcgBvAHAAZQByAHQAeQBOAGEAbQBlACAALQBWAGEAbAB1AGUAIAAkAFAAcgBvAHAAZQByAHQAeQBWAGEAbAB1AGUAIAAtAFAAcgBvAHAAZQByAHQAeQBUAHkAcABlACAAUwB0AHIAaQBuAGcAIAAtAEYAbwByAGMAZQANAAoAfQANAAoAaQBmACAAKAAhACgAdABlAHMAdAAtAHAAYQB0AGgAIAAkAEsAZQB5AE4AYQBtAGUANgA0ACkAKQAgAHsADQAKACAAIAAgACAATgBlAHcALQBJAHQAZQBtACAALQBQAGEAdABoACAAJABLAGUAeQBOAGEAbQBlADYANAAgAC0ARgBvAHIAYwBlAA0ACgAgACAAIAAgAE4AZQB3AC0ASQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAIAAtAFAAYQB0AGgAIAAkAEsAZQB5AE4AYQBtAGUANgA0ACAALQBOAGEAbQBlACAAJABQAHIAbwBwAGUAcgB0AHkATgBhAG0AZQAgAC0AVgBhAGwAdQBlACAAJABQAHIAbwBwAGUAcgB0AHkAVgBhAGwAdQBlACAALQBQAHIAbwBwAGUAcgB0AHkAVAB5AHAAZQAgAFMAdAByAGkAbgBnACAALQBGAG8AcgBjAGUADQAKAH0AZQBsAHMAZQAgAHsADQAKACAAIAAgACAATgBlAHcALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQAgAC0AUABhAHQAaAAgACQASwBlAHkATgBhAG0AZQA2ADQAIAAtAE4AYQBtAGUAIAAkAFAAcgBvAHAAZQByAHQAeQBOAGEAbQBlACAALQBWAGEAbAB1AGUAIAAkAFAAcgBvAHAAZQByAHQAeQBWAGEAbAB1AGUAIAAtAFAAcgBvAHAAZQByAHQAeQBUAHkAcABlACAAUwB0AHIAaQBuAGcAIAAtAEYAbwByAGMAZQANAAoAfQA=">
+          <p:RunPowerShellScript.InArgs>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ExtensionID" ArgType="string" DisplayArg="Input Parameters.Extension ID" DisplayName="ExtensionID" Name="ExtensionID" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[ExtensionID]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryKeyExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_1" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_1" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_1" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_1" />
+        <Variable x:TypeArguments="x:String" Default="test2" Name="ExtensionID" />
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_Conditional_1" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryKeyExists_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="a041f39e-4c89-408a-937b-33ecd56c55f0" Name="Choco Manager" Description="RXh0ZW5zaW9uIGRlIE4tQWJsZSBwb3VyIGluc3RhbGxlciAvIGQ/c2luc3RhbGxlciBkZXMgcGFja2FnZXMgQ2hvY29sYXRleQ==" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{510166fd-587b-47ff-b1d9-cc1d16db92db}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;ChocolateyAction&quot; Label=&quot;Chocolatey Action&quot; ParameterType=&quot;string&quot; Value=&quot;Install,Uninstall&quot; /&gt;&lt;Parameter ParameterName=&quot;PackageName&quot; Label=&quot;Package Name&quot; ParameterType=&quot;string&quot; Value=&quot;vlc,chrome&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.16.1.10" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:acu="clr-namespace:AutomationManager.Common.Utils;assembly=AutomationManager.Common" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>612,1618</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="612,1618" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:SwitchObject AllowDefault_Item="{x:Null}" AllowDefault_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AllowDefault="False" AllowDefault_DisplayArg="true" AssemblyName="PolicyExecutionEngine, Version=2.16.1.10, Culture=neutral, PublicKeyToken=null" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="576,1395" Moniker="7d9c6863-7ef1-4d4d-b1be-cf5fa2a074dd" Result="[SwitchObject_Result]" ResultString="[SwitchObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="SwitchObject" Variable="[ChocolateyAction]" Variable_DisplayArg="Input Parameters.Chocolatey Action" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:SwitchObject.CaseSequence>
+            <p:CaseSequenceActivity DisplayName="" sap:VirtualizedContainerService.HintSize="544,1179" Name="CaseSequenceActivity">
+              <p:CaseSequenceActivity.Activities>
+                <p:CaseObject Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.16.1.10, Culture=neutral, PublicKeyToken=null" DisplayName="Case" sap:VirtualizedContainerService.HintSize="538,331" Moniker="d65424a6-1e0b-4dbd-9991-63480266ea9c" Result="[CaseObject_Result_1]" ResultString="[CaseObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunCase="False" ScriptExecutionMethod="None" TypeName="CaseObject" ValidationError="" Value_DisplayArg="Uninstall" Value_Type="x:String" m_bTextLinkChange="False">
+                  <p:CaseObject.ThenOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="311,231" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.16.1.10, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="273,81" Moniker="6b002427-e212-4556-a760-cb1d12ed48de" OutPut_64="[RunPowerShellScript_OutPut_64_1]" Result="[RunPowerShellScript_Result_1]" ResultString="[RunPowerShellScript_ResultString_1]" Results_x64="[RunPowerShellScript_Results_x64_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="a9949057-12d4-475b-93bb-3efb7468b72d" m_bTextLinkChange="False" script="JABjAGgAbwBjAG8AIAA9ACAAIgAkAGUAbgB2ADoAcwB5AHMAdABlAG0AZAByAGkAdgBlAFwAUAByAG8AZwByAGEAbQBEAGEAdABhAFwAYwBoAG8AYwBvAGwAYQB0AGUAeQBcAGIAaQBuAFwAYwBoAG8AYwBvAC4AZQB4AGUAIgANAAoAJgAkAGMAaABvAGMAbwAgAHUAbgBpAG4AcwB0AGEAbABsACAAIAAkAFAAYQBjAGsAYQBnAGUATgBhAG0AZQAgAC0AeQA=">
+                          <p:RunPowerShellScript.InArgs>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="PackageName" ArgType="string" DisplayArg="Input Parameters.Package Name" DisplayName="Package Name(s)" Name="PackageName" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">[PackageName]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                          </p:RunPowerShellScript.InArgs>
+                          <p:RunPowerShellScript.OutArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                          </p:RunPowerShellScript.OutArgs>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </p:RunPowerShellScript>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_1" />
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_1" />
+                        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_1" />
+                        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_1" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:CaseObject.ThenOption>
+                  <p:CaseObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="Uninstall" />
+                    </InArgument>
+                  </p:CaseObject.Value>
+                </p:CaseObject>
+                <p:CaseObject Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.16.1.10, Culture=neutral, PublicKeyToken=null" DisplayName="Case" sap:VirtualizedContainerService.HintSize="538,772" Moniker="1e569d7b-04bc-47e3-b080-1fb8bc851451" Result="[CaseObject_Result]" ResultString="[CaseObject_ResultString]" RunAsCurrentLoggedOnUser="False" RunCase="False" ScriptExecutionMethod="None" TypeName="CaseObject" ValidationError="" Value_DisplayArg="Install" Value_Type="x:String" m_bTextLinkChange="False">
+                  <p:CaseObject.ThenOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,672" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.16.1.10, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="7207f551-80bc-4009-9c5f-9bcde9656f18" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="6bccaf3b-8be7-4c9b-b588-3f6f770da606" m_bTextLinkChange="False" script="JABjAGgAbwBjAG8AIAA9ACAAIgAkAGUAbgB2ADoAcwB5AHMAdABlAG0AZAByAGkAdgBlAFwAUAByAG8AZwByAGEAbQBEAGEAdABhAFwAYwBoAG8AYwBvAGwAYQB0AGUAeQBcAGIAaQBuAFwAYwBoAG8AYwBvAC4AZQB4AGUAIgANAAoAaQBmACgAVABlAHMAdAAtAFAAYQB0AGgAIAAiACQAZQBuAHYAOgBzAHkAcwB0AGUAbQBkAHIAaQB2AGUAXABQAHIAbwBnAHIAYQBtAEQAYQB0AGEAXABjAGgAbwBjAG8AbABhAHQAZQB5AFwAbABpAGIAXAAkAFAAYQBjAGsAYQBnAGUATgBhAG0AZQAiACkAewByAGUAbQBvAHYAZQAtAGkAdABlAG0AIAAiACQAZQBuAHYAOgBzAHkAcwB0AGUAbQBkAHIAaQB2AGUAXABQAHIAbwBnAHIAYQBtAEQAYQB0AGEAXABjAGgAbwBjAG8AbABhAHQAZQB5AFwAbABpAGIAXAAkAFAAYQBjAGsAYQBnAGUATgBhAG0AZQAiACAALQBSAGUAYwB1AHIAcwBlACAALQBGAG8AcgBjAGUAfQANAAoAJgAkAGMAaABvAGMAbwAgAGkAbgBzAHQAYQBsAGwAIAAkAFAAYQBjAGsAYQBnAGUATgBhAG0AZQAgAC0AeQAgAC0ALQBzAG8AdQByAGMAZQAgACIAaAB0AHQAcABzADoALwAvAGMAaABvAGMAbwBsAGEAdABlAHkALgBjAHAAdQAuAHEAYwAuAGMAYQAvAG4AdQBnAGUAdAAvAEMAUABVAC0AQwBIAE8AQwBPAC8AIgAgAC0ALQBmAG8AcgBjAGUA">
+                          <p:RunPowerShellScript.InArgs>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="PackageName" ArgType="string" DisplayArg="Input Parameters.Package Name" DisplayName="Package Name" Name="PackageName" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">[PackageName]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                          </p:RunPowerShellScript.InArgs>
+                          <p:RunPowerShellScript.OutArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                          </p:RunPowerShellScript.OutArgs>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </p:RunPowerShellScript>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+                        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:CaseObject.ThenOption>
+                  <p:CaseObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="Install" />
+                    </InArgument>
+                  </p:CaseObject.Value>
+                </p:CaseObject>
+              </p:CaseSequenceActivity.Activities>
+              <p:CaseSequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CaseObject_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="CaseObject_Result" />
+                <Variable x:TypeArguments="x:String" Name="CaseObject_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="CaseObject_Result_1" />
+              </p:CaseSequenceActivity.Variables>
+            </p:CaseSequenceActivity>
+          </p:SwitchObject.CaseSequence>
+          <p:SwitchObject.DefaultOption>
+            <p:SequenceActivity DisplayName="Default" sap:VirtualizedContainerService.HintSize="165,127" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <sco:Collection x:TypeArguments="Activity" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <sco:Collection x:TypeArguments="Variable" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:SwitchObject.DefaultOption>
+        </p:SwitchObject>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="Install,Uninstall" Name="ChocolateyAction" />
+        <Variable x:TypeArguments="x:String" Default="vlc,chrome" Name="PackageName" />
+        <Variable x:TypeArguments="x:String" Name="SwitchObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="SwitchObject_Result" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

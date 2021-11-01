@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="77f0fbea-0f01-4e85-9be2-5a92deaee056" Name="Get-Device -GeoLocation" Description="VGhpcyBzZXJ2aWNlIG1vbml0b3IgdGhlIGdlb2xvY2F0aW9uIG1hbmFnZWQgZGV2aWNlcy4=" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{e816baec-1c25-4fab-ae25-2e79b4287a67}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;GeolocationCity&quot; Label=&quot;Geolocation City&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Geolocation City&quot; /&gt;&lt;Parameter ParameterName=&quot;GeolocationIP&quot; Label=&quot;Geolocation IP&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Geolocation IP&quot; /&gt;&lt;Parameter ParameterName=&quot;GeolocationCountry&quot; Label=&quot;Geolocation Country&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Geolocation Country&quot; /&gt;&lt;Parameter ParameterName=&quot;GeolocationISP&quot; Label=&quot;Geolocation ISP&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Geolocation ISP&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>6b98cb91-0e07-4bdc-8a70-6ffc9fa9b1dd.GeolocationCity</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>GeolocationCity</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>6b98cb91-0e07-4bdc-8a70-6ffc9fa9b1dd.GeolocationIP</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>GeolocationIP</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>6b98cb91-0e07-4bdc-8a70-6ffc9fa9b1dd.GeolocationCountry</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>GeolocationCountry</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>6b98cb91-0e07-4bdc-8a70-6ffc9fa9b1dd.GeolocationISP</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>GeolocationISP</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>490,571</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="490,571" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" Moniker="6b98cb91-0e07-4bdc-8a70-6ffc9fa9b1dd" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="b08e2bfa-5580-4bc2-b84b-fadc691a47d6" m_bTextLinkChange="False" script="ZgB1AG4AYwB0AGkAbwBuACAARwBlAHQALQBJAFAARwBlAG8AbABvAGMAYQB0AGkAbwBuACAAewANAAoAIAAgAFAAYQByAGEAbQANAAoAIAAgACgADQAKACAAIAAgACAAWwBzAHQAcgBpAG4AZwBdACQASQBQAEEAZABkAHIAZQBzAHMADQAKACAAIAApAA0ACgAgAA0ACgAgACAAJAByAGUAcQB1AGUAcwB0ACAAPQAgAEkAbgB2AG8AawBlAC0AUgBlAHMAdABNAGUAdABoAG8AZAAgAC0ATQBlAHQAaABvAGQAIABHAGUAdAAgAC0AVQByAGkAIAAiAGgAdAB0AHAAOgAvAC8AaQBwAC0AYQBwAGkALgBjAG8AbQAvAGoAcwBvAG4ALwAkAEkAUABBAGQAZAByAGUAcwBzACIADQAKACAADQAKACAAIABbAFAAUwBDAHUAcwB0AG8AbQBPAGIAagBlAGMAdABdAEAAewANAAoAIAAgACAAIABJAFAAIAAgACAAIAAgACAAPQAgACQAcgBlAHEAdQBlAHMAdAAuAHEAdQBlAHIAeQANAAoAIAAgACAAIABDAGkAdAB5ACAAIAAgACAAPQAgACQAcgBlAHEAdQBlAHMAdAAuAGMAaQB0AHkADQAKACAAIAAgACAAQwBvAHUAbgB0AHIAeQAgAD0AIAAkAHIAZQBxAHUAZQBzAHQALgBjAG8AdQBuAHQAcgB5AA0ACgAgACAAIAAgAEkAUwBQACAAIAAgACAAIAA9ACAAJAByAGUAcQB1AGUAcwB0AC4AaQBzAHAADQAKACAAIAB9AA0ACgB9AA0ACgAkAEcAZQBvAGwAbwBjAGEAdABpAG8AbgAgAD0AIABHAGUAdAAtAEkAUABHAGUAbwBsAG8AYwBhAHQAaQBvAG4ADQAKACQARwBlAG8AbABvAGMAYQB0AGkAbwBuAEMAaQB0AHkAIAA9ACAAJABHAGUAbwBsAG8AYwBhAHQAaQBvAG4ALgBDAGkAdAB5AA0ACgAkAEcAZQBvAGwAbwBjAGEAdABpAG8AbgBJAFAAIAA9ACAAJABHAGUAbwBsAG8AYwBhAHQAaQBvAG4ALgBJAFAADQAKACQARwBlAG8AbABvAGMAYQB0AGkAbwBuAEMAbwB1AG4AdAByAHkAIAA9ACAAJABHAGUAbwBsAG8AYwBhAHQAaQBvAG4ALgBDAG8AdQBuAHQAcgB5AA0ACgAkAEcAZQBvAGwAbwBjAGEAdABpAG8AbgBJAFMAUAAgAD0AIAAkAEcAZQBvAGwAbwBjAGEAdABpAG8AbgAuAEkAUwBQAA0ACgA=">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="GeolocationCity" ArgType="string" DisplayName="Geolocation City" Name="GeolocationCity">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_GeolocationCity]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="GeolocationIP" ArgType="string" DisplayName="Geolocation IP" Name="GeolocationIP">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_GeolocationIP]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="GeolocationCountry" ArgType="string" DisplayName="Geolocation Country" Name="GeolocationCountry">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_GeolocationCountry]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="GeolocationISP" ArgType="string" DisplayName="Geolocation ISP" Name="GeolocationISP">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_GeolocationISP]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_GeolocationCity" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_GeolocationIP" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_GeolocationCountry" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_GeolocationISP" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

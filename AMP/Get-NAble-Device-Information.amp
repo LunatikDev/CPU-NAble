@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="4fff75a1-a36b-47c5-9d6a-7a361ac8cc6e" Name="Get N-Able Device Information" Description="R2V0IE4tQWJsZSBEZXZpY2UgSW5mb3JtYXRpb24=" Version="2.15.1.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="3.0">
+  <Object ID="{84a6a923-89ae-4de0-8e7b-5168369f6b8f}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.1.8" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,945</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,945" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:InstallPowerShellModule AllowClobber_Item="{x:Null}" AllowClobber_ItemProp="{x:Null}" InstallUpdate_Item="{x:Null}" InstallUpdate_ItemProp="{x:Null}" ModuleName_Item="{x:Null}" ModuleName_ItemProp="{x:Null}" AllowClobber="False" AllowClobber_DisplayArg="" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Install PowerShell Module" sap:VirtualizedContainerService.HintSize="468,160" InstallUpdate="False" InstallUpdate_DisplayArg="" ModuleName="PS-NCentral" ModuleName_DisplayArg="PS-NCentral" Moniker="0db44995-640d-4574-a750-1fc73f3b462e" OutPut_64="[InstallPowerShellModule_OutPut_64]" Result="[InstallPowerShellModule_Result]" ResultString="[InstallPowerShellModule_ResultString]" Results_x64="[InstallPowerShellModule_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="Execute64bit" TypeName="InstallPowerShellModule" m_bTextLinkChange="False" />
+        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="b6f93928-14d6-4c59-a684-9cabb9675b8a" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="ZgB1AG4AYwB0AGkAbwBuACAAVwBhAGkAdAAtAFIAYQBuAGQAbwBtAFAAZQByAGkAbwBkACAAewANAAoAIAAgACAAIABbAEMAbQBkAGwAZQB0AEIAaQBuAGQAaQBuAGcAKAApAF0ADQAKACAAIAAgACAAcABhAHIAYQBtACAAKAANAAoAIAAgACAAIAAgACAAIAAgAFsAUABhAHIAYQBtAGUAdABlAHIAKABNAGEAbgBkAGEAdABvAHIAeQA9ACQAZgBhAGwAcwBlACwAUABvAHMAaQB0AGkAbwBuAD0AMAApAF0ADQAKACAAIAAgACAAIAAgACAAIABbAGkAbgB0AF0AJABTAHQAYQByAHQATgB1AG0AYgBlAHIAPQAwACwADQAKACAAIAAgACAAIAAgACAAIABbAFAAYQByAGEAbQBlAHQAZQByACgATQBhAG4AZABhAHQAbwByAHkAPQAkAGYAYQBsAHMAZQAsAFAAbwBzAGkAdABpAG8AbgA9ADEAKQBdAA0ACgAgACAAIAAgACAAIAAgACAAWwBpAG4AdABdACQATQBhAHgATgB1AG0AYgBlAHIAPQAxADIAMAANAAoAIAAgACAAIAApAA0ACgAgACAAIAAgACQAVABpAG0AZQBUAG8AVwBhAGkAdAAgAD0AIABHAGUAdAAtAFIAYQBuAGQAbwBtACAALQBNAGkAbgBpAG0AdQBtACAAJABTAHQAYQByAHQATgB1AG0AYgBlAHIAIAAtAE0AYQB4AGkAbQB1AG0AIAAkAE0AYQB4AE4AdQBtAGIAZQByAA0ACgAgACAAIAAgAHMAdABhAHIAdAAtAHMAbABlAGUAcAAgAC0AcwAgACQAVABpAG0AZQBUAG8AVwBhAGkAdAANAAoAIAAgACAAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgBXAGEAaQB0AGUAZAAgACQAVABpAG0AZQBUAG8AVwBhAGkAdAAgAHMAZQBjAG8AbgBkAHMAIAAuAC4AIgANAAoAfQANAAoADQAKAFcAYQBpAHQALQBSAGEAbgBkAG8AbQBQAGUAcgBpAG8AZAANAAoAJABHAGwAbwBiAGEAbAA6AE4AQwBlAG4AdAByAGEAbABfAEYAUQBEAE4AIAAgACAAIAAgACAAIAAgAD0AIAAiAG4AYwBvAGQANAA0ADAALgBuAC0AYQBiAGwAZQAuAGMAbwBtACIADQAKACQARwBsAG8AYgBhAGwAOgBOAEEAYgBsAGUAXwBTAGUAYwB1AHIAZQBTAHQAcgBpAG4AZwAgACAAIAA9ACAAQwBvAG4AdgBlAHIAdABUAG8ALQBTAGUAYwB1AHIAZQBTAHQAcgBpAG4AZwAgACIAZQB5AEoAMABlAFgAQQBpAE8AaQBKAEsAVgAxAFEAaQBMAEMASgBoAGIARwBjAGkATwBpAEoASQBVAHoASQAxAE4AaQBKADkALgBlAHkASgBwAGMAMwBNAGkATwBpAEoAVABiADIAeABoAGMAbgBkAHAAYgBtAFIAegBJAEUAMQBUAFUAQwBCAE8ATABXAE4AbABiAG4AUgB5AFkAVwB3AGkATABDAEoAMQBjADIAVgB5AGEAVwBRAGkATwBqAFkAMQBOAGoAawAzAE4AagBRADUATgBpAHcAaQBhAFcARgAwAEkAagBvAHgATgBqAEUAMABOAGoASQAzAE0AegBrAHcAZgBRAC4AOAB5AG4AdABmAHoAMQBSAGgANQBvADIANAA1AHkAbABUADkAQgAtAHYASgBaAFoASgAtADEARwBXAHQAUgBpAEQASQBCAF8AcQBuAGEAYwBxADMASQAiACAALQBBAHMAUABsAGEAaQBuAFQAZQB4AHQAIAAtAEYAbwByAGMAZQANAAoAJABHAGwAbwBiAGEAbAA6AE4AQQBiAGwAZQBfAEMAcgBlAGQAZQBuAHQAaQBhAGwAcwAgACAAIAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUABTAEMAcgBlAGQAZQBuAHQAaQBhAGwAIAAoACIAXwBKAFcAVAAiACwAIAAkAEcAbABvAGIAYQBsADoATgBBAGIAbABlAF8AUwBlAGMAdQByAGUAUwB0AHIAaQBuAGcAKQANAAoASQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAFAAUwAtAE4AQwBlAG4AdAByAGEAbAANAAoAJABuAHUAbABsACAAPQAgAE4AZQB3AC0ATgBDAGUAbgB0AHIAYQBsAEMAbwBuAG4AZQBjAHQAaQBvAG4AIAAkAEcAbABvAGIAYQBsADoATgBDAGUAbgB0AHIAYQBsAF8ARgBRAEQATgAgACQATgBBAGIAbABlAF8AQwByAGUAZABlAG4AdABpAGEAbABzAA0ACgAkAEQAZQB2AGkAYwBlACAAPQAgAEcAZQB0AC0ATgBDAEQAZQB2AGkAYwBlAEwAbwBjAGEAbAAgAHwAIABHAGUAdAAtAE4AQwBEAGUAdgBpAGMAZQBPAGIAagBlAGMAdAANAAoAJABEAGUAdgBpAGMAZQAgAHwAIABFAHgAcABvAHIAdAAtAEMAbABpAHgAbQBsACAALQBQAGEAdABoACAAIgBDADoAXAB0AGUAbQBwAFwAbQB5AGQAZQB2AGkAYwBlAC4AeABtAGwAIgAgAC0ARQBuAGMAbwBkAGkAbgBnACAAdQB0AGYAOAA=">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="InstallPowerShellModule_OutPut_64" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="InstallPowerShellModule_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="InstallPowerShellModule_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="InstallPowerShellModule_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

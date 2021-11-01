@@ -1,0 +1,3 @@
+$Global:ProbeInstallerPath = "$env:systemdrive\Temp\WindowsProbeSetup.exe"
+$Global:ProbeInstallerLog = "$env:systemdrive\Temp\probe_install.log"
+&$ProbeInstallerPath /s /v" /qn CUSTOMERID=286 CUSTOMERNAME=1c8e453e6cb1400be91f992141491bd419aeef671f35bb266cb80f8f5268d8ba REGISTRATION_TOKEN=47f4cd6b-03ce-5e6b-4bf7-a66cd7e33055 SERVERPROTOCOL=HTTP SERVERADDRESS=ncod440.n-able.com SERVERPORT=80 PROBETYPE=Network_Windows AGENTDOMAIN=CAREFOURMEDICAL AGENTUSERNAME=Administrateur AGENTPASSWORD=!CPU2010&admin$ /L*v $ProbeInstallerLog "

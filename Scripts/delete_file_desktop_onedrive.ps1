@@ -1,0 +1,153 @@
+<#
+.SYNOPSIS
+    N-Able - Supprimer fichier du bureau de l'utilisateur (Standard + Onedrive)
+.DESCRIPTION
+    N-Able - Supprimer fichier du bureau de l'utilisateur (Standard + Onedrive)
+.NOTES
+    Fichier    : delete_file_desktop_onedrive.ps1
+    Author     : Jerome Couette - jerome.couette@cpu.ca
+    Date       : March 22 2021
+    Version    : 1.0
+#>
+#-----------------------------------------------------------[Functions]------------------------------------------------------------
+<#
+    .SYNOPSIS
+    Send log message to LogDNA service
+
+    .DESCRIPTION
+    Send log message to LogDNA service using the REST API and powershell
+
+    .PARAMETER Message
+    Log message to send to LogDNA.
+
+    .PARAMETER Severity
+    Log Severity [INFO,DEBUG,WARN,ERROR]
+
+    .PARAMETER Application
+    Application that send the log message.
+
+    .PARAMETER ApiKey
+    Organisation Ingestion Key.
+
+    .EXAMPLE
+    PS> Send-DataToLogDNA -Message "Message d'information" -Severity INFO -Application "Update_Medesync_Client.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+    
+    status batchID
+    ------ -------
+    ok     6e696142-aee2-4036-8df8-2f4fc77eafec:65219:ld70
+
+    .EXAMPLE
+    PS> Send-DataToLogDNA -Message "Message de debug" -Severity DEBUG -Application "Update_Medesync_Client.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+    
+    status batchID
+    ------ -------
+    ok     6e696142-aee2-4036-8df8-2f4fc77eafec:65219:ld70
+
+    .EXAMPLE
+    PS> Send-DataToLogDNA -Message "Message d'avertissement" -Severity WARN -Application "Update_Medesync_Client.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+    
+    status batchID
+    ------ -------
+    ok     6e696142-aee2-4036-8df8-2f4fc77eafec:65219:ld70
+
+    .EXAMPLE
+    PS> Send-DataToLogDNA -Message "Message d'erreur" -Severity ERROR -Application "Update_Medesync_Client.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+    
+    status batchID
+    ------ -------
+    ok     6e696142-aee2-4036-8df8-2f4fc77eafec:65219:ld70
+
+    .NOTES
+    Author: Jerome Couette (jerome.couette@cpu.ca)
+    Version: 1.0.0
+    Date: 2021-02-24
+#>
+function Send-DataToLogDNA {
+    [CmdletBinding()]
+    param (
+        # Log message to send to LogDNA
+        [Parameter(Position=0,Mandatory=$true)]
+        [String]$Message,
+        # Log Severity
+        [Parameter(Position=1,Mandatory=$true)]
+        [ValidateSet("INFO", "DEBUG", "WARN", "ERROR")]
+        [String]$Severity,
+        # Application that send the log message
+        [Parameter(Position=2,Mandatory=$true)]
+        [String]$Application,
+        # Organisation Ingestion Key
+        [Parameter(Position=3,Mandatory=$true)]
+        [String]$ApiKey
+    )
+    $time = [int64](get-date -uformat %s)
+    $Uri = "https://logs.logdna.com/logs/ingest?hostname=$env:COMPUTERNAME&now=$time&apikey=$ApiKey"
+    $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+    $headers.Add("Content-Type","application/json; charset=UTF-8")
+    $body = @"
+    {
+        "lines":[
+          {
+              "line": "$Message",
+              "app": "$application",
+              "level": "$Severity"
+          }
+        ]
+      }
+"@ 
+
+$result = Invoke-RestMethod -Uri $uri -Method Post -Body $body -Headers $headers
+return $result
+
+}
+#----------------------------------------------------------[Declarations]----------------------------------------------------------
+[string[]]$Paths = @("$env:systemdrive\Users")
+[string[]]$Excludes = @('*AppData*', '*Application Data*', '*Cookies*', '*Local Settings*', '*Menu Démarrer*', '*Mes documents*', '*SendTo*', "*Voisinage d'impression*", "*Voisinage réseau*")
+$Global:targetFiles = @()
+#-----------------------------------------------------------[Execution]------------------------------------------------------------
+#Liste les dossiers présents dans c:\users (sauf exclusions ci-dessus)
+try {
+    $folders = Get-ChildItem $Paths -Directory -Recurse -Exclude $Excludes | %{ 
+        $allowed = $true
+        foreach ($exclude in $Excludes) { 
+            if ((Split-Path $_.FullName -Parent) -ilike $exclude) { 
+                $allowed = $false
+                break
+            }
+        }
+        if ($allowed) {
+            $_
+        }
+    }
+}
+catch {
+    Send-DataToLogDNA -Message $_ -Severity ERROR -Application "delete_file_desktop_onedrive.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+}
+
+#Trouve le fichier radiologiecrlev.RDP dans les dossiers de la liste $folders et retourne son full path
+try {
+    foreach ($folder in $folders.FullName) {
+        $targetFile = Get-ChildItem "$folder" -File -Filter "*radiologiecrlev.RDP*"
+        if ($null -ne $targetFile) {
+            $Global:targetFiles += $targetFile.FullName
+        }
+    }
+}
+catch {
+    Send-DataToLogDNA -Message $_ -Severity ERROR -Application "delete_file_desktop_onedrive.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+}
+
+#Supprime les fichiers trouvés précédemment 
+try {
+    foreach ($file in $targetFiles) {
+        write-host "Suppression de $Global:targetFiles"
+        remove-item "$file" -Force
+    }
+    Send-DataToLogDNA -Message "The File ($file) has been deleted sucessfully !" -Severity INFO -Application "delete_file_desktop_onedrive.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+}
+catch {
+    Send-DataToLogDNA -Message $_ -Severity ERROR -Application "delete_file_desktop_onedrive.ps1" -ApiKey "1ec3f3f8a4b8617ec6c8904c9c928a6b"
+}
+
+
+
+

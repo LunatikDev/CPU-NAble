@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="1d24f427-861c-4343-9394-bd24a466302c" Name="Upgrade Powershell to 5.1 (All OS)" Description="VXBncmFkZSBQb3dlcnNoZWxsIHRvIDUuMSAoQWxsIE9TKQ==" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{529cc22a-3e46-4d14-b10e-0694687b134a}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.1.8" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>508,571</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="508,571" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="472,154" IsUpdated="True" Moniker="778c7faa-3f71-4eb2-a08a-b6f6e0f544d5" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="d4b875a1-acf1-476e-8400-38900d41f6a1" RunPolicyName_DisplayArg="Upgrade Powershell 2.0 to 5.1" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="a2ea02fb-ae40-465c-8155-f652e9493c6c" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <p:InArg ItemProp="{x:Null}" x:Key="Bulk" ArgType="string" DisplayArg="N" DisplayName="Execute in bulk mode? (Y/N)" Name="Bulk" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">N</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="Force" ArgType="string" DisplayArg="N" DisplayName="Force reinstall? (Y/N)" Name="Force" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">N</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="Refresh" ArgType="string" DisplayArg="N" DisplayName="Re-download files already downloaded (Y/N)" Name="Refresh" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">N</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="472,154" IsUpdated="True" Moniker="49b4de15-3f13-42ae-9362-0508a5268064" Result="[RunPolicy_Result_1]" ResultString="[RunPolicy_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunPolicyId="765c5cfa-6a55-487b-9f58-a503cfde4403" RunPolicyName_DisplayArg="Upgrade Powershell to 5.1 W81 W2012 W2012R2" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="85de2875-3163-46e9-92d7-95cdf7da1826" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

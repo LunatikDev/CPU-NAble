@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="4c1d3f00-90ec-4f0c-8bb1-86198ceb07c1" Name="Installation des composants Kinlogix" Description="SW5zdGFsbGUgbGVzIHZlcnNpb25zIDMyIGJpdHMgZXQgNjQgYml0cyBkZSBTQVAgQ3J5c3RhbCBSZXBvcnRzIGV0IFNRTCBTZXJ2ZXIgQ29tcGFjdA==" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{8491805b-7669-4771-a567-006641d8c403}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.1.8" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>388,937</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,715" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="4dea64a0-d8a7-4865-abd6-91bcc357d588" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="JABjAGgAbwBjAG8AIAA9ACAAIgAkAGUAbgB2ADoAcwB5AHMAdABlAG0AZAByAGkAdgBlAFwAUAByAG8AZwByAGEAbQBEAGEAdABhAFwAYwBoAG8AYwBvAGwAYQB0AGUAeQBcAGIAaQBuAFwAYwBoAG8AYwBvAC4AZQB4AGUAIgANAAoAaQBmACgAIQAoAFQAZQBzAHQALQBQAGEAdABoACAAIgAkAGUAbgB2ADoAcwB5AHMAdABlAG0AZAByAGkAdgBlAFwAUAByAG8AZwByAGEAbQBEAGEAdABhAFwAYwBoAG8AYwBvAGwAYQB0AGUAeQBcAGwAaQBiAFwAcwBxAGwALQBzAGUAcgB2AGUAcgAtAGMAbwBtAHAAYQBjAHQAIgApACkAewAmACQAYwBoAG8AYwBvACAAaQBuAHMAdABhAGwAbAAgAHMAcQBsAC0AcwBlAHIAdgBlAHIALQBjAG8AbQBwAGEAYwB0ACAALQB5ACAALQAtAHMAbwB1AHIAYwBlACAAIgBoAHQAdABwAHMAOgAvAC8AYwBoAG8AYwBvAGwAYQB0AGUAeQAuAGMAcAB1AC4AcQBjAC4AYwBhAC8AbgB1AGcAZQB0AC8AQwBQAFUALQBDAEgATwBDAE8ALwAiACAALQAtAGYAbwByAGMAZQB9AA0ACgBpAGYAKAAhACgAVABlAHMAdAAtAFAAYQB0AGgAIAAiACQAZQBuAHYAOgBzAHkAcwB0AGUAbQBkAHIAaQB2AGUAXABQAHIAbwBnAHIAYQBtAEQAYQB0AGEAXABjAGgAbwBjAG8AbABhAHQAZQB5AFwAbABpAGIAXABzAGEAcAAtAGMAcgB5AHMAdABhAGwALQByAGUAcABvAHIAdABzACIAKQApAHsAJgAkAGMAaABvAGMAbwAgAGkAbgBzAHQAYQBsAGwAIABzAGEAcAAtAGMAcgB5AHMAdABhAGwALQByAGUAcABvAHIAdABzACAALQB5ACAALQAtAHMAbwB1AHIAYwBlACAAIgBoAHQAdABwAHMAOgAvAC8AYwBoAG8AYwBvAGwAYQB0AGUAeQAuAGMAcAB1AC4AcQBjAC4AYwBhAC8AbgB1AGcAZQB0AC8AQwBQAFUALQBDAEgATwBDAE8ALwAiACAALQAtAGYAbwByAGMAZQB9AA==">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

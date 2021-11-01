@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="be2d5427-81e6-4025-8a9e-1d3cc0d332e7" Name="Install Chocolatey Package" Description="SW5zdGFsbCBQYWNrYWdlKHMpIGZyb20gQ2hvY29sYXRleSBhbmQgZGVwbG95IGNob2NvbGF0ZXkgaWYgaXQgaXMgbm90IGluc3RhbGxlZCAob3B0aW9uYWwp" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{344a3473-cffd-4d63-8cc4-236eaf7985b8}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;chocorepo&quot; Label=&quot;Chocolatey Repository Location (leave default unless custom repo needed)&quot; ParameterType=&quot;string&quot; Value=&quot;default&quot; /&gt;&lt;Parameter ParameterName=&quot;installchoco&quot; Label=&quot;Install Chocolatey If It Is Not Installed yes-no&quot; ParameterType=&quot;string&quot; Value=&quot;yes&quot; /&gt;&lt;Parameter ParameterName=&quot;pkgtoinstl&quot; Label=&quot;Packages to Install (separate with comma ,)&quot; ParameterType=&quot;string&quot; Value=&quot;googlechrome,vlc,winrar&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.16.1.10" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>630,3328</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="630,3328" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If - check param is choco install requested" sap:VirtualizedContainerService.HintSize="594,2001" MinRequiredVersion="2.16.0.1" Moniker="d7bd2d56-30cd-454b-a94f-ce4a460032ea" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="yes" Value_Type="x:String" Variable="[installchoco]" Variable_DisplayArg="Input Parameters.Install Chocolatey If It Is Not Installed yes-no" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="562,1728" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional]" DisplayName="File Exists" File="C:\ProgramData\chocolatey\choco.exe" File_DisplayArg="C:\ProgramData\chocolatey\choco.exe" sap:VirtualizedContainerService.HintSize="524,88" MinRequiredVersion="2.10.0.19" Moniker="4183c90d-958e-4a98-915e-ac431f6e287b" Result="[FileExists_Result]" ResultString="[FileExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FileExists" m_bTextLinkChange="False" />
+                <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If choco not installed" sap:VirtualizedContainerService.HintSize="524,1450" MinRequiredVersion="2.16.0.1" Moniker="0631573c-f04e-49bb-92a1-ca292a035df9" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[FileExists_Conditional]" Variable_DisplayArg="File Exists.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="492,1177" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:FolderExists Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" Conditional="[FolderExists_Conditional]" DisplayName="Folder Exists" Folder="c:\temp" Folder_DisplayArg="c:\temp" sap:VirtualizedContainerService.HintSize="454,88" MinRequiredVersion="2.10.0.19" Moniker="21b449aa-afa2-472a-95a5-41b432a3ff15" Result="[FolderExists_Result]" ResultString="[FolderExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FolderExists" m_bTextLinkChange="False" />
+                        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If ctemp exists" sap:VirtualizedContainerService.HintSize="454,511" MinRequiredVersion="2.16.0.1" Moniker="f1f7c393-e287-4bf3-a746-4eb2332e323c" Result="[IfObject_Result_2]" ResultString="[IfObject_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[FolderExists_Conditional]" Variable_DisplayArg="Folder Exists.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                          <p:IfObject.IfOption>
+                            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="371,238" Name="SequenceActivity">
+                              <p:SequenceActivity.Activities>
+                                <p:CreateFolder Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" DisplayName="Create Folder" Folder="c:\temp" FolderInfo="[CreateFolder_FolderInfo]" Folder_DisplayArg="c:\temp" sap:VirtualizedContainerService.HintSize="333,88" MinRequiredVersion="2.10.0.19" Moniker="1d08ef94-b7a7-4cef-b31f-ad113b21527a" Result="[CreateFolder_Result]" ResultString="[CreateFolder_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateFolder" m_bTextLinkChange="False" />
+                              </p:SequenceActivity.Activities>
+                              <p:SequenceActivity.Variables>
+                                <Variable x:TypeArguments="x:String" Name="CreateFolder_FolderInfo" />
+                                <Variable x:TypeArguments="x:String" Name="CreateFolder_ResultString" />
+                                <Variable x:TypeArguments="x:Double" Name="CreateFolder_Result" />
+                              </p:SequenceActivity.Variables>
+                            </p:SequenceActivity>
+                          </p:IfObject.IfOption>
+                          <p:IfObject.Value>
+                            <InArgument x:TypeArguments="x:Object">
+                              <p:ObjectLiteral Value="False" />
+                            </InArgument>
+                          </p:IfObject.Value>
+                        </p:IfObject>
+                        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" MinRequiredVersion="2.10.0.19" Moniker="2927eda8-3c14-4bc3-9726-14abcd55f368" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="KABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQARgBpAGwAZQAoACcAaAB0AHQAcABzADoALwAvAGMAaABvAGMAbwBsAGEAdABlAHkALgBvAHIAZwAvAGkAbgBzAHQAYQBsAGwALgBwAHMAMQAnACwAJwBjADoAXAB0AGUAbQBwAFwAaQBuAHMAdABhAGwAbABjAGgAbwBjAG8ALgBwAHMAMQAnACkADQAKAHMAZQB0AC0AZQB4AGUAYwB1AHQAaQBvAG4AcABvAGwAaQBjAHkAIAAtAEUAeABlAGMAdQB0AGkAbwBuAFAAbwBsAGkAYwB5ACAAVQBuAHIAZQBzAHQAcgBpAGMAdABlAGQAIAAtAEYAbwByAGMAZQAgAA0ACgBjADoAXAB0AGUAbQBwAFwAaQBuAHMAdABhAGwAbABjAGgAbwBjAG8ALgBwAHMAMQA=">
+                          <p:RunPowerShellScript.InArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                          </p:RunPowerShellScript.InArgs>
+                          <p:RunPowerShellScript.OutArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                          </p:RunPowerShellScript.OutArgs>
+                        </p:RunPowerShellScript>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+                        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+                        <Variable x:TypeArguments="x:String" Name="FolderExists_Conditional" />
+                        <Variable x:TypeArguments="x:String" Name="FolderExists_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="FolderExists_Result" />
+                        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_2" />
+                        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_2" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="False" />
+                    </InArgument>
+                  </p:IfObject.Value>
+                </p:IfObject>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="FileExists_Conditional" />
+                <Variable x:TypeArguments="x:String" Name="FileExists_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="FileExists_Result" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="yes" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:SplitString Separator_Item="{x:Null}" Separator_ItemProp="{x:Null}" StringToSplit_Item="{x:Null}" StringToSplit_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" DisplayName="Split String" sap:VirtualizedContainerService.HintSize="594,124" MinRequiredVersion="2.10.0.19" Moniker="b7a2cc47-4203-47ff-ac9b-6333527f5f19" Result="[SplitString_Result]" ResultString="[SplitString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Separator="," Separator_DisplayArg="," StringToSplit="[pkgtoinstl]" StringToSplit_DisplayArg="Input Parameters.Packages to Install (separate with comma ,)" Tokens="[SplitString_Tokens]" TypeName="SplitString" m_bTextLinkChange="False" />
+        <p:ForEachLoop CollectionName_Item="{x:Null}" CollectionName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" CollectionName="[SplitString_Tokens]" CollectionName_DisplayArg="Split String.Tokens" DisplayName="ForEach" sap:VirtualizedContainerService.HintSize="594,900" ItemValue="[ForEachLoop_ItemValue]" MinRequiredVersion="2.10.0.19" Moniker="205b25fe-aeda-4ac3-9a2d-fa8944306870" Result="[ForEachLoop_Result]" ResultString="[ForEachLoop_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="ForEachLoop" m_bTextLinkChange="False">
+          <p:ForEachLoop.Each>
+            <p:ForEachSequence DisplayName="Each" sap:VirtualizedContainerService.HintSize="506,800">
+              <p:ForEachSequence.Activities>
+                <p:Log Message="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="468,88" LogMessage="[Log_LogMessage]" Message_DisplayArg="ForEach.Split String.Tokens.Value" Message_Item="[ForEachLoop_ItemValue]" Message_ItemProp="Value" MinRequiredVersion="2.10.0.19" Moniker="84415964-a072-4a0c-9280-4fff9fa747a2" Result="[Log_Result]" ResultString="[Log_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.4.0.43, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="2b62714a-0596-44e0-890c-61c8c65067a4" OutPut_64="[RunPowerShellScript_OutPut_64_1]" Result="[RunPowerShellScript_Result_1]" ResultString="[RunPowerShellScript_ResultString_1]" Results_x64="[RunPowerShellScript_Results_x64_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="86f85ee4-9ad3-4b96-850f-9e9fbed7b57a" m_bTextLinkChange="False" script="JABjAGgAbwBjAG8AIAA9ACAAIgAkAGUAbgB2ADoAcwB5AHMAdABlAG0AZAByAGkAdgBlAFwAUAByAG8AZwByAGEAbQBEAGEAdABhAFwAYwBoAG8AYwBvAGwAYQB0AGUAeQBcAGMAaABvAGMAbwAuAGUAeABlACIADQAKACYAJABjAGgAbwBjAG8AIABpAG4AcwB0AGEAbABsACAAJABwAGEAYwBrAGEAZwBlAG4AYQBtAGUAIAAtAHkAIAAtAC0AcwBvAHUAcgBjAGUAIABoAHQAdABwAHMAOgAvAC8AYwBoAG8AYwBvAGwAYQB0AGUAeQAuAGMAcAB1AC4AcQBjAC4AYwBhAC8AbgB1AGcAZQB0AC8AQwBQAFUALQBDAEgATwBDAE8ALwAgAC0ALQBmAG8AcgBjAGUADQAKAA==">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="packagename" ArgType="string" DisplayArg="Log.Log Message" DisplayName="packagename" Name="packagename" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[Log_LogMessage]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+              </p:ForEachSequence.Activities>
+              <p:ForEachSequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Log_LogMessage" />
+                <Variable x:TypeArguments="x:String" Name="Log_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="Log_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_1" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_1" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_1" />
+              </p:ForEachSequence.Variables>
+            </p:ForEachSequence>
+          </p:ForEachLoop.Each>
+        </p:ForEachLoop>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="SplitString_Tokens" />
+        <Variable x:TypeArguments="x:String" Name="SplitString_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="SplitString_Result" />
+        <Variable x:TypeArguments="x:Object" Name="ForEachLoop_ItemValue" />
+        <Variable x:TypeArguments="x:String" Name="ForEachLoop_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="ForEachLoop_Result" />
+        <Variable x:TypeArguments="x:String" Name="chocorepo" />
+        <Variable x:TypeArguments="x:String" Name="installchoco" />
+        <Variable x:TypeArguments="x:String" Name="pkgtoinstl" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

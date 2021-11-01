@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="e619a64f-7838-408f-84a8-25480beabcc0" Name="Monitoring SQL Server Compact (x64)" Description="TW9uaXRvcmluZyBTUUwgU2VydmVyIENvbXBhY3QgKHg2NCk=" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{9594be52-abdf-44d0-8e60-8da1a3dec261}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;SoftwareName&quot; Label=&quot;Software Name&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Software Name&quot; /&gt;&lt;Parameter ParameterName=&quot;SoftwareVendor&quot; Label=&quot;Software Vendor&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Software Vendor&quot; /&gt;&lt;Parameter ParameterName=&quot;SoftwareVersion&quot; Label=&quot;Software Version&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Software Version&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>447b6a77-07bf-48cb-90b0-8df8ae2303c3.SoftwareName</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>SoftwareName</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>447b6a77-07bf-48cb-90b0-8df8ae2303c3.SoftwareVendor</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>SoftwareVendor</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>447b6a77-07bf-48cb-90b0-8df8ae2303c3.SoftwareVersion</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>SoftwareVersion</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.1.8" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="447b6a77-07bf-48cb-90b0-8df8ae2303c3" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="debd52b0-0e4d-40bb-8b26-496fefae6ac8" m_bTextLinkChange="False" script="JABXAG0AaQBPAGIAagAgAD0AIABHAGUAdAAtAFcAbQBpAE8AYgBqAGUAYwB0ACAALQBDAGwAYQBzAHMAIABXAGkAbgAzADIAXwBQAHIAbwBkAHUAYwB0ACAAfAAgAHcAaABlAHIAZQAgAHsAJABfAC4ASQBkAGUAbgB0AGkAZgB5AGkAbgBnAE4AdQBtAGIAZQByACAALQBlAHEAIAAiAHsARAA0AEEARAAzADkAQQBEAC0AMAA5ADEARQAtADQARAAzADMALQBCAEIAMgBCAC0ANQA5AEYANgBGAEMAQgA4AEEARABDADMAfQAiAH0ADQAKACQAUwBvAGYAdAB3AGEAcgBlAE4AYQBtAGUAIAA9ACAAJABXAG0AaQBPAGIAagAuAE4AYQBtAGUAIAANAAoAJABTAG8AZgB0AHcAYQByAGUAVgBlAG4AZABvAHIAIAA9ACAAJABXAG0AaQBPAGIAagAuAFYAZQBuAGQAbwByACAADQAKACQAUwBvAGYAdAB3AGEAcgBlAFYAZQByAHMAaQBvAG4AIAA9ACAAJABXAG0AaQBPAGIAagAuAFYAZQByAHMAaQBvAG4AIAA=">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="SoftwareName" ArgType="string" DisplayName="Software Name" Name="SoftwareName">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_SoftwareName]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="SoftwareVendor" ArgType="string" DisplayName="Software Vendor" Name="SoftwareVendor">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_SoftwareVendor]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="SoftwareVersion" ArgType="string" DisplayName="Software Version" Name="SoftwareVersion">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_SoftwareVersion]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_SoftwareName" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_SoftwareVendor" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_SoftwareVersion" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
